@@ -1,11 +1,16 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import { Section, SectionTitle, CardWithDescription, CardWithTitle } from "../components/Layout";
-import { Carousel } from "../components/Carousel/Carousel";
-import Seo from "../components/seo";
-import CommunitySection from "../components/CommunitySection";
-import { ArrowRight } from "../components/Icons";
-import Link from "../components/Link";
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import {
+  Section,
+  SectionTitle,
+  CardWithDescription,
+  CardWithTitle,
+} from '../components/Layout';
+import { Carousel } from '../components/Carousel/Carousel';
+import Seo from '../components/seo';
+import CommunitySection from '../components/CommunitySection';
+import { ArrowRight } from '../components/Icons';
+import Link from '../components/Link';
 
 const IndexPage = ({ data }) => {
   const etosCards = React.useMemo(
@@ -34,26 +39,32 @@ const IndexPage = ({ data }) => {
           <h1 className="text-4xl desktop:text-6xl text-white">
             Decentralized Internet
             <br />
-            for a <span className="text-primary underline-white">Free Future</span>
+            for a{' '}
+            <span className="text-primary underline-white">Free Future</span>
           </h1>
 
           <p className="mt-5 font-light text-lg leading-7 text-palette-300">
             <span className="hidden desktop:block">
-              Skynet is a decentralized storage and app hosting platform that makes it easy to join
+              Skynet is a decentralized storage and app hosting platform that
+              makes it easy to join
             </span>
             <span className="hidden desktop:block">
-              the decentralized internet movement, as a user or a web3 developer.
+              the decentralized internet movement, as a user or a web3
+              developer.
             </span>
             <span className="desktop:hidden text-justify text-sm">
-              Skynet is a decentralized storage and app hosting platform that makes it easy to join the decentralized
-              internet movement, as a user or a web3 developer.
+              Skynet is a decentralized storage and app hosting platform that
+              makes it easy to join the decentralized internet movement, as a
+              user or a web3 developer.
             </span>
           </p>
         </div>
       </Section>
 
       <Section className="bg-white">
-        <SectionTitle className="text-center mb-11">The new decentralized internet is here</SectionTitle>
+        <SectionTitle className="text-center mb-11">
+          The new decentralized internet is here
+        </SectionTitle>
 
         <div className="hidden desktop:grid gap-8 grid-cols-3">
           {etosCards.map((card, index) => (
@@ -67,8 +78,9 @@ const IndexPage = ({ data }) => {
 
         <div className="flex flex-col items-center mt-16">
           <p className="max-w-screen-md text-center text-base font-content text-palette-400">
-            Skynet apps pave the way for a new web that prioritizes the privacy, security, and experience of users. Join
-            our decentralized internet ecosystem and revolution.
+            Skynet apps pave the way for a new web that prioritizes the privacy,
+            security, and experience of users. Join our decentralized internet
+            ecosystem and revolution.
           </p>
 
           <Link
@@ -81,13 +93,18 @@ const IndexPage = ({ data }) => {
       </Section>
 
       <Section className="bg-palette-100">
-        <SectionTitle className="mb-7 desktop:hidden">Ready to build your application?</SectionTitle>
+        <SectionTitle className="mb-7 desktop:hidden">
+          Ready to build your application?
+        </SectionTitle>
 
         <div className="hidden desktop:grid gap-x-8 gap-y-16 grid-cols-3">
           <div className="hidden desktop:inline-block">
             <SectionTitle>Ready to build your application?</SectionTitle>
 
-            <Link href="https://docs.siasky.net" className="button-secondary-dark inline-block px-10 mt-7">
+            <Link
+              href="https://docs.skynetlabs.com"
+              className="button-secondary-dark inline-block px-10 mt-7"
+            >
               Learn more
             </Link>
           </div>
@@ -102,7 +119,10 @@ const IndexPage = ({ data }) => {
         </div>
 
         <div className="desktop:hidden mt-12 text-center">
-          <Link href="https://docs.siasky.net" className="button-secondary-dark inline-block px-10 mt-7">
+          <Link
+            href="https://docs.skynetlabs.com"
+            className="button-secondary-dark inline-block px-10 mt-7"
+          >
             Learn more
           </Link>
         </div>
