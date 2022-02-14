@@ -17,6 +17,7 @@ jobs:
           node-version: 16.x
 
       - run: yarn
+      - run: yarn prettier --check .
       - run: yarn build
 
       - name: Integration tests
