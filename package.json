@@ -23,7 +23,7 @@
     "cypress": "cypress"
   },
   "dependencies": {
-    "@fontsource/sora": "4.5.2",
+    "@fontsource/sora": "4.5.3",
     "@fontsource/source-sans-pro": "4.5.3",
     "@svgr/webpack": "6.2.1",
     "classnames": "2.3.1",
