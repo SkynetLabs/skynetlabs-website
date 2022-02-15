@@ -56,7 +56,11 @@ const aboutCards = [
 ];
 
 const showCareersCTA = true; // switch to hide or display the careers CTA section
-const careers = { href: "https://jobs.lever.co/SkynetLabs", target: "_blank", rel: "noopener noreferrer" };
+const careers = {
+  href: "https://jobs.lever.co/SkynetLabs",
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
 
 const paginate = (array, size) =>
   array.reduce((acc, item, index) => {
@@ -145,14 +149,14 @@ const AboutPage = ({ ...props }) => {
             </p>
 
             <Link
-              href="https://support.siasky.net"
+              href="https://support.skynetlabs.com"
               className="hidden sm:inline-flex items-center text-xs text-palette-600 uppercase hover:text-primary transition-colors duration-200"
             >
               Learn more about how our technology works <ArrowRight className="fill-current" />
             </Link>
 
             <Link
-              href="https://support.siasky.net"
+              href="https://support.skynetlabs.com"
               className="inline-flex sm:hidden flex-col text-xs text-palette-600 uppercase"
             >
               Learn more about how our{" "}
@@ -198,7 +202,9 @@ const AboutPage = ({ ...props }) => {
         <div className="grid grid-cols-1 gap-x-16 gap-y-16 desktop:grid-cols-3 mt-10">
           <div
             className="hidden desktop:block"
-            style={{ background: "url(/logo-symbol.svg) no-repeat left center / contain" }}
+            style={{
+              background: "url(/logo-symbol.svg) no-repeat left center / contain",
+            }}
           ></div>
 
           <div className="col-span-3 desktop:col-start-2 desktop:col-span-2 space-y-12">

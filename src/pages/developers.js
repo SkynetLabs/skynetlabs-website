@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 import Link from "../components/Link";
 
 const LearnMoreButton = () => (
-  <Link href="https://docs.siasky.net" className="button-secondary-dark inline-block px-10 mt-7">
+  <Link href="https://docs.skynetlabs.com" className="button-secondary-dark inline-block px-10 mt-7">
     Learn more
   </Link>
 );
@@ -44,7 +44,7 @@ const resources = [
   {
     title: "Skynet Developer Guide",
     description: "Developer portal for resources and guides.",
-    href: "https://docs.siasky.net",
+    href: "https://docs.skynetlabs.com/",
   },
   {
     title: "Skynet SDK Docs",
@@ -74,7 +74,7 @@ const resources = [
 ];
 
 const docs = [
-  { name: "Developer Guide", href: "https://docs.siasky.net" },
+  { name: "Developer Guide", href: "https://docs.skynetlabs.com/" },
   { name: "Skynet SDK Docs", href: "https://siasky.net/docs/" },
 ];
 
