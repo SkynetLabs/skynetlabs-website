@@ -111,3 +111,11 @@
   social:
     github: https://github.com/meeh0w
     linkedin: https://www.linkedin.com/in/micha%C5%82-leszczyk/
+
+- name: Farzad Yousefzadeh
+  position: Software Engineer
+  image: ./team/farzad-yousefzadeh.jpeg
+  social:
+    github: https://github.com/farskid
+    linkedin: https://www.linkedin.com/in/farzadyz/
+    twitter: https://twitter.com/farzad_yz
