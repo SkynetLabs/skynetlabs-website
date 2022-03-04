@@ -6,20 +6,39 @@ import { NewsSummary } from "../components/News";
 import Link from "../components/Link";
 import Seo from "../components/seo";
 
-const NewsCard = ({ frontmatter, fields }) => {
-  const { title, external, categories, description, thumbnail, avatar, author, date } = frontmatter;
-  const link = external ? { href: external } : { to: fields.slug };
+const NewsCard = (props) => {
+  const {
+    title,
+    published_at,
+    authors,
+    canonical_url,
+    slug,
+    feature_image_local,
+    tags,
+    custom_excerpt,
+    meta_description,
+    excerpt,
+  } = props;
+
+  const { author, profile_image_local } = authors[0];
+  const link = canonical_url ? { href: canonical_url } : { to: slug };
+
+  const description = custom_excerpt || meta_description || excerpt;
+
+  // TODO: limit description to x many characters.
+
+  console.log(feature_image_local);
 
   return (
     <div className="flex flex-col">
       <Link {...link} className="flex items-center">
-        <GatsbyImage image={getImage(thumbnail)} alt={title} />
+        <GatsbyImage image={getImage(feature_image_local)} alt={title} />
       </Link>
 
-      {categories && (
+      {tags && (
         <div className="mt-6">
-          {categories.map((category) => (
-            <Label key={category}>{category}</Label>
+          {tags.map((tag) => (
+            <Label key={tag.slug}>{tag.name}</Label>
           ))}
         </div>
       )}
@@ -35,7 +54,7 @@ const NewsCard = ({ frontmatter, fields }) => {
       )}
 
       <div className="mt-6">
-        <NewsSummary avatar={avatar} author={author} date={date} />
+        <NewsSummary avatar={profile_image_local} author={author} date={published_at} />
       </div>
     </div>
   );
@@ -54,8 +73,8 @@ const NewsPage = ({ data }) => {
         />
 
         <div className="grid grid-cols-1 desktop:grid-cols-3 gap-x-8 gap-y-24">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <NewsCard key={node.id} {...node} />
+          {data.allGhostPost.edges.map(({ node }) => (
+            <NewsCard key={node.slug} {...node} />
           ))}
         </div>
       </Section>
@@ -64,33 +83,14 @@ const NewsPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query NewsQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { hidden: { ne: true } } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+  query BlogQuery {
+    allGhostPost {
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            description
-            author
-            categories
-            external
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 320
-                  height: 170
-                  placeholder: BLURRED
-                  formats: [AUTO, AVIF, WEBP]
-                  transformOptions: { fit: COVER, cropFocus: CENTER }
-                )
-              }
-            }
-            avatar {
+          authors {
+            name
+            profile_image
+            profile_image_local {
               childImageSharp {
                 gatsbyImageData(
                   width: 40
@@ -101,8 +101,28 @@ export const query = graphql`
               }
             }
           }
-          fields {
+          featured
+          excerpt
+          canonical_url
+          published_at(formatString: "YYYY-MM-DD")
+          slug
+          tags {
             slug
+            name
+          }
+          title
+          custom_excerpt
+          meta_description
+          feature_image_local {
+            childImageSharp {
+              gatsbyImageData(
+                width: 320
+                height: 170
+                placeholder: BLURRED
+                formats: [AUTO, AVIF, WEBP]
+                transformOptions: { fit: COVER, cropFocus: CENTER }
+              )
+            }
           }
         }
       }
@@ -111,3 +131,12 @@ export const query = graphql`
 `;
 
 export default NewsPage;
+
+// profile_image_local {
+//   gatsbyImageData(
+//     width: 40
+//     placeholder: BLURRED
+//     formats: [AUTO, AVIF, WEBP]
+//     transformOptions: { fit: COVER, cropFocus: CENTER }
+//   )
+// }

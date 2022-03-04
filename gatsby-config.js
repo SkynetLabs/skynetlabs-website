@@ -1,5 +1,9 @@
 const { defaultIcons } = require("gatsby-plugin-manifest/common");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Skynet Labs`,
@@ -30,11 +34,36 @@ module.exports = {
         path: `${__dirname}/data/`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/data/news`,
+    //     name: `news`,
+    //   },
+    // },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-ghost`,
       options: {
-        path: `${__dirname}/data/news`,
-        name: `news`,
+        apiUrl: `https://cms.skynetlabs.com`,
+        contentApiKey: process.env.GHOST_API_KEY,
+        version: `v3`, // Ghost API version, optional, defaults to "v3".
+        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "GhostAuthor",
+        imagePath: "profile_image",
+        name: "profile_image_local",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: "GhostPost",
+        imagePath: "feature_image",
+        name: "feature_image_local",
       },
     },
     `gatsby-plugin-postcss`,
