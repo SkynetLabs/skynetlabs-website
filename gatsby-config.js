@@ -110,10 +110,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-matomo",
       options: {
-        siteId: 3,
-        matomoUrl: "https://surveillance.sia.tech",
+        siteId: 1,
+        matomoUrl: "https://skynetlabs.matomo.cloud",
         siteUrl: "https://skynetlabs.com",
-        localScript: "/piwik.js",
       },
     },
     {
