@@ -5654,11 +5654,6 @@ gatsby-plugin-manifest@4.7.0:
     semver "^7.3.5"
     sharp "^0.29.3"
 
-gatsby-plugin-matomo@0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.11.0.tgz#2a4322df78045af0b3f44ba7b8c455d57b526f96"
-  integrity sha512-yvQFOGky3vyEEmmtopDvsrlnZ8htYrgHHD9CCvlFQ6DrGSL+Y01wkbJZBMpiGAiRt/GKh/8MGWcMfSAGoMQM9g==
-
 gatsby-plugin-page-creator@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-4.7.0.tgz#7139b6fc8d61dfccffb68fdb7221a2713d2bc5a7"
@@ -5825,10 +5820,10 @@ gatsby-remark-prismjs@6.7.0:
     parse-numeric-range "^1.2.0"
     unist-util-visit "^2.0.3"
 
-gatsby-remark-responsive-iframe@5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-5.7.0.tgz#bbd8fb79aa92d72444c6240afff6848dd2c63123"
-  integrity sha512-/MTzyZVdRK4Lg+BOWcNwzPc+jgKput71Kguw+E9mLFw7mI43Tuv1QU6orRye8HqoqR77wvHPNqb0EVvkEOs1Vg==
+gatsby-remark-responsive-iframe@5.9.0:
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-responsive-iframe/-/gatsby-remark-responsive-iframe-5.9.0.tgz#5216513433087daf660465e20f37a2f65705373f"
+  integrity sha512-2E8E4aIb9YViCHME7QV6PRyixvIxsDPYcPHU6MES31nguJfiCtq9wiIDxCGxrhb3wae8VWpZzvEfyZykVnvQXg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
