@@ -1,24 +1,48 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Section, SectionTitle, Label } from "../components/Layout";
-import { NewsSummary } from "../components/News";
-import Seo from "../components/seo";
-import Link from "../components/Link";
 import { TwitterShareButton, LinkedinShareButton, FacebookShareButton } from "react-share";
-import { TwitterSmall, LinkedinSmall, FacebookSmall, ArrowUpCircle } from "../components/Icons";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+
+import Seo from "../components/seo";
+import Link from "../components/Link";
+import { NewsSummary } from "../components/News";
+import { Section, SectionTitle, Label } from "../components/Layout";
+import { TwitterSmall, LinkedinSmall, FacebookSmall, ArrowUpCircle } from "../components/Icons";
+
 import "../styles/news-post.css";
 
-const Post = ({ data, location }) => {
+const useResponsiveEmbeds = (ref) => {
+  React.useLayoutEffect(() => {
+    if (!ref.current) {
+      return;
+    }
+
+    const embeds = ref.current.querySelectorAll("figure iframe");
+
+    embeds.forEach((embed) => {
+      const { width, height } = embed;
+      const ratio = Number(height) / Number(width);
+
+      embed.setAttribute("width", "100%");
+      embed.setAttribute("height", embed.offsetWidth * ratio);
+    });
+  });
+};
+
+const PressReleaseTemplate = ({ data, location }) => {
   const post = data.ghostPost;
   const author = post.authors[0];
   const description = post.meta_description || post.custom_excerpt || post.excerpt;
   const tags = post.tags.map((tag) => tag.slug).join(" ");
+  console.log(post);
+  const contentRef = React.useRef();
+
+  useResponsiveEmbeds(contentRef);
 
   return (
     <>
-      <Seo title={post.meta_title || post.title} description={post.meta_description || post.excerpt} />
+      <Seo title={post.meta_title || post.title} description={description} />
       <Helmet>
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
@@ -33,7 +57,7 @@ const Post = ({ data, location }) => {
           </span>
         </Link>
 
-        <article className={`blog-post ${tags}`} itemScope itemType="http://schema.org/Article">
+        <article className={`press-release ${tags}`} itemScope itemType="http://schema.org/Article">
           {post.tags && (
             <div className="mb-4">
               {post.tags.map((tag) => (
@@ -70,9 +94,9 @@ const Post = ({ data, location }) => {
             </aside>
 
             <div className="col-span-2 space-y-12">
-              {description && <h2 className="text-lg font-light">{description}</h2>}
               <section
-                className="content-body load-external-scripts"
+                ref={contentRef}
+                className="content-body"
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
               />
@@ -94,7 +118,7 @@ const Post = ({ data, location }) => {
   );
 };
 
-Post.propTypes = {
+PressReleaseTemplate.propTypes = {
   data: PropTypes.shape({
     ghostPost: PropTypes.shape({
       codeinjection_styles: PropTypes.object,
@@ -106,7 +130,7 @@ Post.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-export default Post;
+export default PressReleaseTemplate;
 
 export const postQuery = graphql`
   query ($slug: String!) {

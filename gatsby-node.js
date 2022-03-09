@@ -1,12 +1,15 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+const BlogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+const PressReleaseTemplate = path.resolve(`./src/templates/press-release.js`);
+
+/* Tags and their names are defined in Ghost CMS */
+const isBlogPost = (node) => node.primary_tag?.name === "Blog";
+const isPressRelease = (node) => node.primary_tag?.name === "Press Release";
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-
-  // Define a template for news post
-  const PostTemplate = path.resolve(`./src/templates/news-post.js`);
-  // const PostTemplateMd = path.resolve(`./src/templates/news-post-md.js`);
 
   // Get all markdown news posts sorted by date and all possible authors
   const result = await graphql(
@@ -16,6 +19,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               slug
+              primary_tag {
+                name
+              }
             }
           }
         }
@@ -33,12 +39,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create post pages
   posts.forEach(({ node }) => {
     // This part here defines, that our posts will use
-    // a `/:slug/` permalink.
-    let url = `/news/${node.slug}/`;
+    // a `/news/:slug/` permalink.
+    const url = `/news/${node.slug}/`;
+    const component = isBlogPost(node) ? BlogPostTemplate : isPressRelease(node) ? PressReleaseTemplate : null;
+
+    if (component === null) {
+      // NOTE: should we throw here?
+      reporter.panicOnBuild(
+        `Don't know which template to use for "${node.slug}" - did you add a primary tag to the article?`
+      );
+      return;
+    }
 
     createPage({
       path: url,
-      component: PostTemplate,
+      component,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

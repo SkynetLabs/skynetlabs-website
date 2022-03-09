@@ -34,20 +34,12 @@ module.exports = {
         path: `${__dirname}/data/`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/data/news`,
-    //     name: `news`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-ghost`,
       options: {
         apiUrl: `https://cms.skynetlabs.com`,
         contentApiKey: process.env.GHOST_API_KEY,
         version: `v3`, // Ghost API version, optional, defaults to "v3".
-        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
       },
     },
     {

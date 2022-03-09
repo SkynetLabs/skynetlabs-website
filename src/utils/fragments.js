@@ -20,6 +20,17 @@ export const ghostPostFields = graphql`
     slug
     featured
     feature_image
+    feature_image_local {
+      childImageSharp {
+        gatsbyImageData(
+          width: 800
+          quality: 80
+          placeholder: BLURRED
+          formats: [AUTO, AVIF, WEBP]
+          transformOptions: { fit: COVER, cropFocus: CENTER }
+        )
+      }
+    }
     excerpt
     custom_excerpt
     visibility
@@ -51,6 +62,7 @@ export const ghostPostFields = graphql`
         childImageSharp {
           gatsbyImageData(
             width: 40
+            quality: 80
             placeholder: BLURRED
             formats: [AUTO, AVIF, WEBP]
             transformOptions: { fit: COVER, cropFocus: CENTER }
