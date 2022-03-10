@@ -35,7 +35,6 @@ const PressReleaseTemplate = ({ data, location }) => {
   const author = post.authors[0];
   const description = post.meta_description || post.custom_excerpt || post.excerpt;
   const tags = post.tags.map((tag) => tag.slug).join(" ");
-  console.log(post);
   const contentRef = React.useRef();
 
   useResponsiveEmbeds(contentRef);

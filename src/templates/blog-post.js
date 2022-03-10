@@ -35,7 +35,7 @@ const BlogPostMetadata = ({ post }) => (
       {post.authors.map(
         (author) =>
           author.profile_image_local && (
-            <li className="relative -mx-1.5">
+            <li key={author.slug} className="relative -mx-1.5">
               <GatsbyImage
                 image={getImage(author.profile_image_local)}
                 alt={author.name}
@@ -48,7 +48,9 @@ const BlogPostMetadata = ({ post }) => (
     <div>
       <div className="text-palette-500 text-md">
         {post.authors.map((author) => (
-          <span className="after:content-[',_'] after:last:content-none">{author.name}</span>
+          <span key={author.slug} className="after:content-[',_'] after:last:content-none">
+            {author.name}
+          </span>
         ))}
       </div>
       <div className="text-palette-300 text-sm font-light">
@@ -92,7 +94,7 @@ const PostTemplate = ({ data }) => {
             ))}
           </div>
         )}
-        <article className={`max-w-tablet blog-post ${tags}`} itemScope itemType="http://schema.org/Article">
+        <article className={`blog-post ${tags}`} itemScope itemType="http://schema.org/Article">
           <h1>{post.title}</h1>
           {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
           <BlogPostMetadata post={post} />

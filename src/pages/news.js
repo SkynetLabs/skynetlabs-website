@@ -27,8 +27,6 @@ const NewsCard = (props) => {
 
   // TODO: limit description to x many characters.
 
-  console.log(feature_image_local);
-
   return (
     <div className="flex flex-col">
       <Link {...link} className="flex items-center">
@@ -67,10 +65,7 @@ const NewsPage = ({ data }) => {
 
       <Section className="bg-white" first={true}>
         {/* this is the gray box in the top left corner, 400px height is totally arbitrary but it works */}
-        <div
-          className="absolute top-0 left-0 right-0 hidden bg-white desktop:block bg-column"
-          style={{ height: "400px" }}
-        />
+        <div className="absolute top-0 left-0 right-0 hidden bg-white desktop:block" style={{ height: "320px" }} />
 
         <div className="grid grid-cols-1 desktop:grid-cols-3 gap-x-8 gap-y-24">
           {data.allGhostPost.edges.map(({ node }) => (
