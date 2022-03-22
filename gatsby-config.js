@@ -146,38 +146,27 @@ module.exports = {
                 path
               }
             }
-            allMarkdownRemark {
-              nodes {
-                frontmatter {
-                  date,
-                  hidden
-                },
-                fields {
-                  slug
+            allGhostPost {
+              edges{
+                node {
+                  slug,
+                  published_at
                 }
               }
             }
           }
         `,
-        resolvePages: ({ allSitePage: { nodes: allPages }, allMarkdownRemark: { nodes: allNews } }) => {
+        resolvePages: ({ allSitePage: { nodes: allPages }, allGhostPost: { edges: allNodes } }) => {
           const pathToDateMap = {};
 
-          allNews.map((post) => {
-            pathToDateMap[post.fields.slug] = { date: post.frontmatter.date, hidden: post.frontmatter.hidden };
+          allNodes.map((post) => {
+            pathToDateMap[post.slug] = { date: post.published_at };
           });
 
-          // modify pages to filter out hidden news items and add date
-          const pages = allPages
-            .filter((page) => {
-              if (pathToDateMap[page.path] && pathToDateMap[page.path].hidden) {
-                return false;
-              }
-
-              return true;
-            })
-            .map((page) => {
-              return { ...page, ...pathToDateMap[page.path] };
-            });
+          // modify pages to add date
+          const pages = allPages.map((page) => {
+            return { ...page, ...pathToDateMap[page.path] };
+          });
 
           return pages;
         },
