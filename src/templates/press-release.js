@@ -51,7 +51,6 @@ const PressReleaseTemplate = ({ data, location }) => {
         <meta property="og:title" content={post.og_title || post.meta_title || post.title} />
         <meta property="og:description" content={post.og_description || description} />
         <meta property="og:image" content={post.og_image || post.feature_image} />
-        <meta property="article:author" content={post.primary_author.name}></meta>
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@SkynetLabs" />

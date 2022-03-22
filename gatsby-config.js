@@ -133,7 +133,7 @@ module.exports = {
       options: {
         output: "/",
         createLinkInHead: true,
-        excludes: ["/using-typescript/"],
+        excludes: ["/using-typescript/", "/news-archived/"],
         query: `
           {
             site {
@@ -147,23 +147,21 @@ module.exports = {
               }
             }
             allGhostPost {
-              edges{
-                node {
+              nodes {
                   slug,
                   published_at
-                }
               }
             }
           }
         `,
-        resolvePages: ({ allSitePage: { nodes: allPages }, allGhostPost: { edges: allNodes } }) => {
+        resolvePages: ({ allSitePage: { nodes: allPages }, allGhostPost: { nodes: allNews } }) => {
           const pathToDateMap = {};
 
-          allNodes.map((post) => {
-            pathToDateMap[post.slug] = { date: post.published_at };
+          allNews.map((post) => {
+            pathToDateMap[`/news/${post.slug}/`] = { date: post.published_at };
           });
 
-          // modify pages to add date
+          // modify pages to filter out hidden news items and add date
           const pages = allPages.map((page) => {
             return { ...page, ...pathToDateMap[page.path] };
           });

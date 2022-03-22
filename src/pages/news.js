@@ -79,7 +79,7 @@ const NewsPage = ({ data }) => {
 
 export const query = graphql`
   query BlogQuery {
-    allGhostPost {
+    allGhostPost(sort: { fields: published_at, order: DESC }) {
       edges {
         node {
           authors {

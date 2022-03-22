@@ -31,8 +31,8 @@ const useResponsiveEmbeds = (ref) => {
 };
 
 const BlogPostMetadata = ({ post }) => (
-  <div className="flex flex-row gap-4 items-center">
-    <ul className="list-none flex flex-wrap pl-0">
+  <div className="flex flex-row items-center gap-4">
+    <ul className="flex flex-wrap pl-0 list-none">
       {post.authors.map(
         (author) =>
           author.profile_image_local && (
@@ -40,7 +40,7 @@ const BlogPostMetadata = ({ post }) => (
               <GatsbyImage
                 image={getImage(author.profile_image_local)}
                 alt={author.name}
-                className="rounded-full border-2 border-white"
+                className="border-2 border-white rounded-full"
               />
             </li>
           )
@@ -54,7 +54,7 @@ const BlogPostMetadata = ({ post }) => (
           </span>
         ))}
       </div>
-      <div className="text-palette-300 text-sm font-light">
+      <div className="text-sm font-light text-palette-300">
         <span>{post.published_at_pretty}</span>
         <span className="px-3 text-xs">•</span>
         <span>{post.reading_time} min read</span>
@@ -82,7 +82,6 @@ const PostTemplate = ({ data }) => {
         <meta property="og:title" content={post.og_title || post.meta_title || post.title} />
         <meta property="og:description" content={post.og_description || description} />
         <meta property="og:image" content={post.og_image || post.feature_image} />
-        <meta property="article:author" content={post.primary_author.name}></meta>
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@SkynetLabs" />
