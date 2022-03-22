@@ -78,8 +78,7 @@ a {
   @apply text-primary hover:text-primary-light transition-colors;
 }
 
-.blog-post a
-.press-release a {
+.blog-post a .press-release a {
   @apply underline;
 }
 
@@ -97,7 +96,8 @@ blockquote {
   @apply border-l-primary border-l-2 font-normal pl-4 mt-7 italic;
 }
 
-b, strong {
+b,
+strong {
   @apply text-palette-500 font-semibold;
 }
 
