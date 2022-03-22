@@ -62,6 +62,7 @@ export const ghostPostFields = graphql`
         childImageSharp {
           gatsbyImageData(
             width: 40
+            height: 40
             quality: 80
             placeholder: BLURRED
             formats: [AUTO, AVIF, WEBP]

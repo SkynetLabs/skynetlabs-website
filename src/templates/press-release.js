@@ -9,6 +9,7 @@ import Link from "../components/Link";
 import { NewsSummary } from "../components/News";
 import { Section, SectionTitle, Label } from "../components/Layout";
 import { TwitterSmall, LinkedinSmall, FacebookSmall, ArrowUpCircle } from "../components/Icons";
+import useSiteMetadata from "../services/useSiteMetadata";
 
 import "../styles/news-post.css";
 
@@ -31,11 +32,13 @@ const useResponsiveEmbeds = (ref) => {
 };
 
 const PressReleaseTemplate = ({ data, location }) => {
+  const { siteUrl } = useSiteMetadata();
   const post = data.ghostPost;
   const author = post.authors[0];
   const description = post.meta_description || post.custom_excerpt || post.excerpt;
   const tags = post.tags.map((tag) => tag.slug).join(" ");
   const contentRef = React.useRef();
+  const ogUrl = post.canonical_url || `${siteUrl}/news/${post.slug}`;
 
   useResponsiveEmbeds(contentRef);
 
@@ -43,6 +46,21 @@ const PressReleaseTemplate = ({ data, location }) => {
     <>
       <Seo title={post.meta_title || post.title} description={description} />
       <Helmet>
+        <meta property="og:url" content={ogUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.og_title || post.meta_title || post.title} />
+        <meta property="og:description" content={post.og_description || description} />
+        <meta property="og:image" content={post.og_image || post.feature_image} />
+        <meta property="article:author" content={post.primary_author.name}></meta>
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@SkynetLabs" />
+        <meta name="twitter:creator" content={post.primary_author.twitter} />
+        <meta name="twitter:title" content={post.twitter_title || post.meta_title || post.title} />
+        <meta name="twitter:description" content={post.twitter_description || description} />
+        <meta name="twitter:image" content={post.twitter_image || post.feature_image} />
+        {/* <meta name="twitter:image:alt" content="" /> */}
+
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Section className="bg-white desktop:bg-column" first={true}>
@@ -93,6 +111,7 @@ const PressReleaseTemplate = ({ data, location }) => {
             </aside>
 
             <div className="col-span-2 space-y-12">
+              {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
               <section
                 ref={contentRef}
                 className="content-body"

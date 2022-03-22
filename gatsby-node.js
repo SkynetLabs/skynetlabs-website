@@ -45,9 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     if (component === null) {
       // NOTE: should we throw here?
-      reporter.panicOnBuild(
-        `Don't know which template to use for "${node.slug}" - did you add a primary tag to the article?`
-      );
+      reporter.error(`Don't know which template to use for "${node.slug}" - did you add a primary tag to the article?`);
       return;
     }
 

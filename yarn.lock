@@ -6296,9 +6296,10 @@ gatsby-plugin-react-helmet@5.11.0:
   dependencies:
     "@babel/runtime" "^7.15.4"
 
-"gatsby-plugin-remote-images@https://github.com/meeh0w/gatsby-plugin-remote-images.git#master":
-  version "3.0.0"
-  resolved "https://github.com/meeh0w/gatsby-plugin-remote-images.git#8d936be500bf41328be83672da1df1a4213e45a3"
+gatsby-plugin-remote-images@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-remote-images/-/gatsby-plugin-remote-images-3.3.0.tgz#9cec7238c7212dcf549b9b382949a9457e010be6"
+  integrity sha512-1B8vGJEMkPsrIE/PGxaEsIOtgZ+0ZzrtMgX8Un1/okhppfF8d+dZFNaA5No6KrDG44FgsMjE8Gv9ouv089srDA==
   dependencies:
     gatsby-source-filesystem "^3.4.0"
     lodash "^4.17.15"

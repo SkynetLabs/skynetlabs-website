@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .content-body {
-  @apply flex flex-col text-base leading-7 text-palette-400 font-light;
+  @apply font-content flex flex-col text-base leading-7 text-palette-400 font-light;
 }
 
 .content-body > div {
@@ -32,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply first:mt-0;
+  @apply font-sans first:mt-0;
 }
 
 h1 + h2 {
@@ -75,7 +75,12 @@ figure + p {
 }
 
 a {
-  @apply text-primary underline hover:text-primary-light transition-colors;
+  @apply text-primary hover:text-primary-light transition-colors;
+}
+
+.blog-post a
+.press-release a {
+  @apply underline;
 }
 
 /* GhostCMS adds -accent suffix to classnames that are supposed to have a brand-color background */
@@ -92,8 +97,8 @@ blockquote {
   @apply border-l-primary border-l-2 font-normal pl-4 mt-7 italic;
 }
 
-strong {
-  @apply text-palette-500;
+b, strong {
+  @apply text-palette-500 font-semibold;
 }
 
 ul,

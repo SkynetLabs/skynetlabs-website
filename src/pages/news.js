@@ -20,7 +20,7 @@ const NewsCard = (props) => {
     excerpt,
   } = props;
 
-  const { author, profile_image_local } = authors[0];
+  const { name, profile_image_local } = authors[0];
   const link = canonical_url ? { href: canonical_url } : { to: slug };
 
   const description = custom_excerpt || meta_description || excerpt;
@@ -52,7 +52,7 @@ const NewsCard = (props) => {
       )}
 
       <div className="mt-6">
-        <NewsSummary avatar={profile_image_local} author={author} date={published_at} />
+        <NewsSummary avatar={profile_image_local} author={name} date={published_at} />
       </div>
     </div>
   );
@@ -89,6 +89,7 @@ export const query = graphql`
               childImageSharp {
                 gatsbyImageData(
                   width: 40
+                  height: 40
                   placeholder: BLURRED
                   formats: [AUTO, AVIF, WEBP]
                   transformOptions: { fit: COVER, cropFocus: CENTER }
