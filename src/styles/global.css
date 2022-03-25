@@ -100,3 +100,16 @@
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
 }
+
+@layer utilities {
+  .truncate-vertical {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-vertical-4 {
+    @apply truncate-vertical;
+    -webkit-line-clamp: 4;
+  }
+}

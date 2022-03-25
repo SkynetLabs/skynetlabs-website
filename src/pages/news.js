@@ -25,8 +25,6 @@ const NewsCard = (props) => {
 
   const description = custom_excerpt || meta_description || excerpt;
 
-  // TODO: limit description to x many characters.
-
   return (
     <div className="flex flex-col">
       <Link {...link} className="flex items-center">
@@ -46,7 +44,7 @@ const NewsCard = (props) => {
       </Link>
 
       {description && (
-        <Link {...link} className="mt-4 font-content text-palette-400">
+        <Link {...link} className="mt-4 font-content text-palette-400 truncate-vertical-4 hover:text-palette-600">
           {description}
         </Link>
       )}
@@ -64,7 +62,7 @@ const NewsPage = ({ data }) => {
       <Seo title="News" />
 
       <Section className="bg-white" first={true}>
-        {/* this is the gray box in the top left corner, 400px height is totally arbitrary but it works */}
+        {/* this is the gray box in the top left corner, 320px height is totally arbitrary but it works */}
         <div className="absolute top-0 left-0 right-0 hidden bg-white desktop:block" style={{ height: "320px" }} />
 
         <div className="grid grid-cols-1 desktop:grid-cols-3 gap-x-8 gap-y-24">
@@ -127,12 +125,3 @@ export const query = graphql`
 `;
 
 export default NewsPage;
-
-// profile_image_local {
-//   gatsbyImageData(
-//     width: 40
-//     placeholder: BLURRED
-//     formats: [AUTO, AVIF, WEBP]
-//     transformOptions: { fit: COVER, cropFocus: CENTER }
-//   )
-// }
