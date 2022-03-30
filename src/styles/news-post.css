@@ -1,154 +1,150 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.content-body {
-  @apply font-content flex flex-col text-base leading-7 text-palette-400 font-light;
-}
-
-.content-body > div {
-  @apply mt-8;
-}
-
 .excerpt {
   @apply text-palette-300 my-4 text-lg font-light;
-}
-
-h1 {
-  @apply mt-12 text-4xl font-bold text-palette-500;
-}
-
-h2 {
-  @apply mt-12 text-3xl font-bold text-palette-500;
-}
-
-h3 {
-  @apply mt-12 text-2xl font-bold text-palette-500;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-sans first:mt-0;
-}
-
-h1 + h2 {
-  @apply mt-4;
-}
-h2 + h3 {
-  @apply mt-3;
-}
-h3 + h4 {
-  @apply mt-2;
-}
-
-h1 + *,
-h2 + * {
-  @apply mt-3;
-}
-
-h3 + p,
-h4 + p {
-  @apply mt-2;
-}
-
-h5 + p,
-h6 + p {
-  @apply mt-1;
-}
-
-p {
-  @apply mt-2 first:mt-0;
-}
-
-p + p,
-div + p {
-  @apply mt-8;
-}
-
-p + figure,
-figure + p {
-  @apply mt-8;
 }
 
 a {
   @apply text-primary hover:text-primary-light transition-colors;
 }
 
-.blog-post a .press-release a {
-  @apply underline;
-}
+.content-body {
+  @apply font-content flex flex-col text-base leading-7 text-palette-400 font-light;
 
-/* GhostCMS adds -accent suffix to classnames that are supposed to have a brand-color background */
-/* Let's make sure our links and text are easily visible in these blocks. */
-[class*="-accent"] a,
-[class*="-accent"] * {
-  @apply text-white;
-}
-[class*="-accent"] a {
-  @apply hover:text-white/75;
-}
+  > div {
+    @apply mt-8;
+  }
 
-blockquote {
-  @apply border-l-primary border-l-2 font-normal pl-4 mt-7 italic;
-}
+  h1 {
+    @apply mt-12 text-4xl font-bold text-palette-500;
+  }
 
-b,
-strong {
-  @apply text-palette-500 font-semibold;
-}
+  h2 {
+    @apply mt-12 text-3xl font-bold text-palette-500;
+  }
 
-ul,
-ol {
-  @apply my-3 pl-6;
-}
+  h3 {
+    @apply mt-12 text-2xl font-bold text-palette-500;
+  }
 
-ul {
-  list-style-type: disc;
-}
-ul ul {
-  list-style-type: circle;
-}
-ul ul ul {
-  list-style-type: square;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans first:mt-0;
+  }
 
-ol {
-  list-style-type: decimal;
-}
-ol ol {
-  list-style-type: lower-latin;
-}
-ol ol ol {
-  list-style-type: lower-roman;
-}
+  h1 + h2 {
+    @apply mt-4;
+  }
+  h2 + h3 {
+    @apply mt-3;
+  }
+  h3 + h4 {
+    @apply mt-2;
+  }
 
-li {
-  @apply pl-1.5 my-2 marker:text-palette-400;
-}
+  h1 + *,
+  h2 + * {
+    @apply mt-3;
+  }
 
-figcaption {
-  @apply mt-2 text-sm text-center text-palette-300 font-thin;
-}
+  h3 + p,
+  h4 + p {
+    @apply mt-2;
+  }
 
-pre {
-  @apply bg-palette-100 p-2 my-4 rounded-md border border-palette-200/50 whitespace-pre-wrap;
-  font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
-}
+  h5 + p,
+  h6 + p {
+    @apply mt-1;
+  }
 
-code {
-  @apply rounded-sm border border-palette-200/50 px-1 pt-1 bg-palette-100;
-}
+  p {
+    @apply mt-2 first:mt-0;
+  }
 
-pre code {
-  @apply p-0 border-0;
-}
+  p + p,
+  div + p {
+    @apply mt-8;
+  }
 
-hr {
-  @apply my-[6vmin] border-palette-200/50;
+  p + figure,
+  figure + p {
+    @apply mt-8;
+  }
+
+  a {
+    @apply underline;
+  }
+
+  /* GhostCMS adds -accent suffix to classnames that are supposed to have a brand-color background */
+  /* Let's make sure our links and text are easily visible in these blocks. */
+  [class*="-accent"] a,
+  [class*="-accent"] * {
+    @apply text-white;
+  }
+  [class*="-accent"] a {
+    @apply hover:text-white/75;
+  }
+
+  blockquote {
+    @apply border-l-primary border-l-2 font-normal pl-4 mt-7 italic;
+  }
+
+  b,
+  strong {
+    @apply text-palette-500 font-semibold;
+  }
+
+  ul,
+  ol {
+    @apply my-3 pl-6;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+  ul ul {
+    list-style-type: circle;
+  }
+  ul ul ul {
+    list-style-type: square;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+  ol ol {
+    list-style-type: lower-latin;
+  }
+  ol ol ol {
+    list-style-type: lower-roman;
+  }
+
+  li {
+    @apply pl-1.5 my-2 marker:text-palette-400;
+  }
+
+  figcaption {
+    @apply mt-2 text-sm text-center text-palette-300 font-thin;
+  }
+
+  pre {
+    @apply bg-palette-100 p-2 my-4 rounded-md border border-palette-200/50 whitespace-pre-wrap;
+    font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
+  }
+
+  code {
+    @apply rounded-sm border border-palette-200/50 px-1 pt-1 bg-palette-100;
+  }
+
+  pre code {
+    @apply p-0 border-0;
+  }
+
+  hr {
+    @apply my-[6vmin] border-palette-200/50;
+  }
 }
 
 .kg-align-center {
