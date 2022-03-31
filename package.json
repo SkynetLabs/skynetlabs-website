@@ -61,7 +61,7 @@
     "react-helmet": "6.1.0",
     "react-share": "4.4.0",
     "react-svg-loader": "3.0.3",
-    "react-syntax-highlighter": "15.4.5",
+    "react-syntax-highlighter": "15.5.0",
     "react-use": "17.3.2"
   },
   "devDependencies": {
