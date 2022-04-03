@@ -7,21 +7,11 @@ import Link from "../components/Link";
 import Seo from "../components/seo";
 
 const NewsCard = (props) => {
-  const {
-    title,
-    published_at,
-    authors,
-    canonical_url,
-    slug,
-    feature_image_local,
-    tags,
-    custom_excerpt,
-    meta_description,
-    excerpt,
-  } = props;
+  const { title, published_at, authors, slug, feature_image_local, tags, custom_excerpt, meta_description, excerpt } =
+    props;
 
   const { name, profile_image_local } = authors[0];
-  const link = canonical_url ? { href: canonical_url } : { to: slug };
+  const link = { to: slug };
 
   const description = custom_excerpt || meta_description || excerpt;
 
