@@ -4,12 +4,21 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = `https://skynetlabs.com`,
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === "production";
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   siteMetadata: {
     title: `Skynet Labs`,
     description: `Skynet Labs is a company behind Skynet - decentralized file sharing and content distribution protocol`,
     author: `Skynet Labs`,
-    siteUrl: `https://skynetlabs.com`,
+    siteUrl,
     image: `https://skynetlabs.com/icons/icon-512x512.png`,
   },
   plugins: [
@@ -63,7 +72,24 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-svgr`,
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: "*" }],
+            sitemap: `${siteUrl}/sitemap-index.xml`,
+            host: siteUrl,
+          },
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: `${siteUrl}/sitemap-index.xml`,
+            host: siteUrl,
+          },
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-yaml`,
     {
