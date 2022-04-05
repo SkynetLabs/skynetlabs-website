@@ -83,7 +83,7 @@ module.exports = {
             host: siteUrl,
           },
           "deploy-preview": {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
+            policy: [{ userAgent: "*" }], // TODO: disallow on previews.
             sitemap: `${siteUrl}/sitemap-index.xml`,
             host: siteUrl,
           },
