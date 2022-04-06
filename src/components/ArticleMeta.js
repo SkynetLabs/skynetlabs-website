@@ -17,6 +17,7 @@ export default function ArticleMeta({ post }) {
 
   return (
     <Helmet htmlAttributes={{ lang: "en" }}>
+      <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="article:headline" content={title} />
       <meta name="description" content={description} />
