@@ -16,7 +16,7 @@ export default function ArticleMeta({ post }) {
   const publisherUrl = `https://twitter.com/SkynetLabs`;
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: "en" }}>
       <meta name="title" content={title} />
       <meta name="article:headline" content={title} />
       <meta name="description" content={description} />
@@ -49,9 +49,10 @@ export default function ArticleMeta({ post }) {
             "@type": "NewsArticle",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://google.com/article"
+              "@id": "https://google.com/article",
+              "url": "${ogUrl}"
             },
-            "headline": "${title}",
+            "headline": "${post.title}",
             "image": ["${post.feature_image}"],
             "datePublished": "${post.published_at}",
             "dateModified": "${post.updated_at}",
@@ -63,6 +64,7 @@ export default function ArticleMeta({ post }) {
             "publisher": {
               "@type": "Organization",
               "name": "Skynet Labs",
+              "url": "${siteUrl}",
               "logo": {
                 "@type": "ImageObject",
                 "url": "${orgImage}"

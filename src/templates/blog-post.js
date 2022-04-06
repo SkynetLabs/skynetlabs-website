@@ -48,14 +48,8 @@ const BlogPostMetadata = ({ post }) => (
     <div>
       <div className="text-palette-500 text-md">
         {post.authors.map((author) => (
-          <span
-            key={author.slug}
-            itemProp="author"
-            itemScope
-            itemType="http://schema.org/Person"
-            className="after:content-[',_'] after:last:content-none"
-          >
-            <span itemProp="name">{author.name}</span>
+          <span key={author.slug} className="after:content-[',_'] after:last:content-none">
+            <span>{author.name}</span>
           </span>
         ))}
       </div>
@@ -99,22 +93,17 @@ const PostTemplate = ({ data }) => {
             ))}
           </div>
         )}
-        <article className={`blog-post ${tags}`} itemScope itemType="http://schema.org/Article">
-          <h1 itemProp="headline">{post.title}</h1>
+        <article className={`blog-post ${tags}`}>
+          <h1>{post.title}</h1>
           {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
           <BlogPostMetadata post={post} />
           {post.feature_image_local && (
             <div className="my-4">
-              <GatsbyImage image={getImage(post.feature_image_local)} alt="" className="w-full" itemProp="image" />
+              <GatsbyImage image={getImage(post.feature_image_local)} alt="" className="w-full" />
             </div>
           )}
 
-          <section
-            ref={contentRef}
-            className="content-body"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            itemProp="articleBody"
-          />
+          <section ref={contentRef} className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
 
         <Link

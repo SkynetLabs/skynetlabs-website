@@ -4,12 +4,10 @@ import { TwitterShareButton, LinkedinShareButton, FacebookShareButton } from "re
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
-import Seo from "../components/seo";
 import Link from "../components/Link";
 import { NewsSummary } from "../components/News";
 import { Section, SectionTitle, Label } from "../components/Layout";
 import { TwitterSmall, LinkedinSmall, FacebookSmall, ArrowUpCircle } from "../components/Icons";
-import useSiteMetadata from "../services/useSiteMetadata";
 
 import "../styles/news-post.css";
 import ArticleMeta from "../components/ArticleMeta";
@@ -57,7 +55,7 @@ const PressReleaseTemplate = ({ data, location }) => {
           </span>
         </Link>
 
-        <article className={`press-release ${tags}`} itemScope itemType="http://schema.org/Article">
+        <article className={`press-release ${tags}`}>
           {post.tags && (
             <div className="mb-4">
               {post.tags.map((tag) => (
@@ -66,9 +64,7 @@ const PressReleaseTemplate = ({ data, location }) => {
             </div>
           )}
 
-          <SectionTitle itemProp="headline" className="mb-16">
-            {post.title}
-          </SectionTitle>
+          <SectionTitle className="mb-16">{post.title}</SectionTitle>
 
           <div className="grid grid-cols-1 desktop:grid-cols-3 gap-y-8 desktop:gap-x-8">
             <aside className="space-y-5">
@@ -95,12 +91,7 @@ const PressReleaseTemplate = ({ data, location }) => {
 
             <div className="col-span-2 space-y-12">
               {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
-              <section
-                ref={contentRef}
-                className="content-body"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-                itemProp="articleBody"
-              />
+              <section ref={contentRef} className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
           </div>
         </article>
