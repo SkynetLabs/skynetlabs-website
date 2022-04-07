@@ -11,7 +11,6 @@ const NewsHeader = () => {
           node {
             title
             slug
-            canonical_url
           }
         }
       }
@@ -22,8 +21,8 @@ const NewsHeader = () => {
 
   if (!latestNews) return null; // no featured news
 
-  const { title, slug, canonical_url } = latestNews.node;
-  const link = canonical_url ? { href: canonical_url } : { to: `/news/${slug}/` };
+  const { title, slug } = latestNews.node;
+  const link = { to: `/news/${slug}` };
 
   return (
     <div className="p-3 px-8 bg-palette-500">
