@@ -13,7 +13,7 @@ export const Section = ({
 }) => (
   <section
     className={classnames(
-      "px-8",
+      "px-4 desktop:px-8",
       {
         "pt-48 desktop:pt-80": marginTop && first, // + navigation offset => pt-32 desktop:pt-48
         "pt-16 desktop:pt-32": marginTop && !first,
@@ -24,7 +24,11 @@ export const Section = ({
     {...props}
   >
     <div
-      className={classnames("mx-auto", { "max-w-content": width === "content", "max-w-layout": width === "layout" })}
+      className={classnames("mx-auto", {
+        "max-w-content": width === "content",
+        "max-w-layout": width === "layout",
+        "max-w-prose": width === "prose",
+      })}
     >
       {children}
     </div>

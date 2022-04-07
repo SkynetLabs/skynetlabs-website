@@ -43,6 +43,10 @@
   h1 {
     @apply font-semibold text-3xl desktop:text-6xl desktop:leading-16;
   }
+
+  a {
+    @apply text-primary hover:text-primary-light transition-colors;
+  }
 }
 
 .circle {
@@ -99,4 +103,17 @@
   text-decoration-color: #0d0d0d;
   text-decoration-thickness: 4px;
   text-underline-offset: 4px;
+}
+
+@layer utilities {
+  .truncate-vertical {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-vertical-4 {
+    @apply truncate-vertical;
+    -webkit-line-clamp: 4;
+  }
 }

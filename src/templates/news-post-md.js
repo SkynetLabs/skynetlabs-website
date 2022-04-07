@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <Section className="bg-white desktop:bg-column" first={true}>
         <Link
           to="/news"
-          className="flex items-center space-x-2 relative -top-6 desktop:-top-10 hover:text-primary transition-colors duration-200"
+          className="relative flex items-center space-x-2 transition-colors duration-200 -top-6 desktop:-top-10 hover:text-primary"
         >
           <ArrowUpCircle className="transform -rotate-90 fill-current" />
           <span className="relative text-lg font-semibold" style={{ top: 1 }}>
@@ -52,10 +52,10 @@ const BlogPostTemplate = ({ data, location }) => {
               <hr className="text-palette-200" />
 
               <div className="flex items-center">
-                <div className="text-xs uppercase mr-4">Share</div>
+                <div className="mr-4 text-xs uppercase">Share</div>
 
                 <TwitterShareButton url={location.href} title={post.frontmatter.title} hashtags={[]}>
-                  <TwitterSmall className="fill-current hover:text-palette-400 transition-colors duration-200" />
+                  <TwitterSmall className="transition-colors duration-200 fill-current hover:text-palette-400" />
                 </TwitterShareButton>
 
                 <LinkedinShareButton
@@ -63,11 +63,11 @@ const BlogPostTemplate = ({ data, location }) => {
                   title={post.frontmatter.title}
                   summary={post.frontmatter.description}
                 >
-                  <LinkedinSmall className="fill-current hover:text-palette-400 transition-colors duration-200" />
+                  <LinkedinSmall className="transition-colors duration-200 fill-current hover:text-palette-400" />
                 </LinkedinShareButton>
 
                 <FacebookShareButton url={location.href} quote={post.frontmatter.title}>
-                  <FacebookSmall className="fill-current hover:text-palette-400 transition-colors duration-200" />
+                  <FacebookSmall className="transition-colors duration-200 fill-current hover:text-palette-400" />
                 </FacebookShareButton>
               </div>
             </aside>
@@ -81,7 +81,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
         <Link
           to="/news"
-          className="flex items-center space-x-2 relative hover:text-primary transition-colors duration-200 mt-12 desktop:mt-0 desktop:-bottom-12"
+          className="relative flex items-center mt-12 space-x-2 transition-colors duration-200 hover:text-primary desktop:mt-0 desktop:-bottom-12"
         >
           <ArrowUpCircle className="transform -rotate-90 fill-current" />
           <span className="relative text-lg font-semibold" style={{ top: 1 }}>
@@ -96,7 +96,7 @@ const BlogPostTemplate = ({ data, location }) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+  query MdBlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
     site {
       siteMetadata {
         title

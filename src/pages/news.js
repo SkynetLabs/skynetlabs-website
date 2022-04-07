@@ -6,20 +6,25 @@ import { NewsSummary } from "../components/News";
 import Link from "../components/Link";
 import Seo from "../components/seo";
 
-const NewsCard = ({ frontmatter, fields }) => {
-  const { title, external, categories, description, thumbnail, avatar, author, date } = frontmatter;
-  const link = external ? { href: external } : { to: fields.slug };
+const NewsCard = (props) => {
+  const { title, published_at, authors, slug, feature_image_local, tags, custom_excerpt, meta_description, excerpt } =
+    props;
+
+  const { name, profile_image_local } = authors[0];
+  const link = { to: slug };
+
+  const description = custom_excerpt || meta_description || excerpt;
 
   return (
     <div className="flex flex-col">
       <Link {...link} className="flex items-center">
-        <GatsbyImage image={getImage(thumbnail)} alt={title} />
+        <GatsbyImage image={getImage(feature_image_local)} alt={title} />
       </Link>
 
-      {categories && (
+      {tags && (
         <div className="mt-6">
-          {categories.map((category) => (
-            <Label key={category}>{category}</Label>
+          {tags.map((tag) => (
+            <Label key={tag.slug}>{tag.name}</Label>
           ))}
         </div>
       )}
@@ -29,13 +34,13 @@ const NewsCard = ({ frontmatter, fields }) => {
       </Link>
 
       {description && (
-        <Link {...link} className="mt-4 font-content text-palette-400">
+        <Link {...link} className="mt-4 font-content text-palette-400 truncate-vertical-4 hover:text-palette-600">
           {description}
         </Link>
       )}
 
       <div className="mt-6">
-        <NewsSummary avatar={avatar} author={author} date={date} />
+        <NewsSummary avatar={profile_image_local} author={name} date={published_at} />
       </div>
     </div>
   );
@@ -47,15 +52,12 @@ const NewsPage = ({ data }) => {
       <Seo title="News" />
 
       <Section className="bg-white" first={true}>
-        {/* this is the gray box in the top left corner, 400px height is totally arbitrary but it works */}
-        <div
-          className="absolute top-0 left-0 right-0 hidden bg-white desktop:block bg-column"
-          style={{ height: "400px" }}
-        />
+        {/* this is the gray box in the top left corner, 320px height is totally arbitrary but it works */}
+        <div className="absolute top-0 left-0 right-0 hidden bg-white desktop:block" style={{ height: "320px" }} />
 
         <div className="grid grid-cols-1 desktop:grid-cols-3 gap-x-8 gap-y-24">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <NewsCard key={node.id} {...node} />
+          {data.allGhostPost.edges.map(({ node }) => (
+            <NewsCard key={node.slug} {...node} />
           ))}
         </div>
       </Section>
@@ -64,36 +66,18 @@ const NewsPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query NewsQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { hidden: { ne: true } } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+  query BlogQuery {
+    allGhostPost(sort: { fields: published_at, order: DESC }) {
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            description
-            author
-            categories
-            external
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 320
-                  height: 170
-                  placeholder: BLURRED
-                  formats: [AUTO, AVIF, WEBP]
-                  transformOptions: { fit: COVER, cropFocus: CENTER }
-                )
-              }
-            }
-            avatar {
+          authors {
+            name
+            profile_image
+            profile_image_local {
               childImageSharp {
                 gatsbyImageData(
                   width: 40
+                  height: 40
                   placeholder: BLURRED
                   formats: [AUTO, AVIF, WEBP]
                   transformOptions: { fit: COVER, cropFocus: CENTER }
@@ -101,8 +85,28 @@ export const query = graphql`
               }
             }
           }
-          fields {
+          featured
+          excerpt
+          canonical_url
+          published_at(formatString: "YYYY-MM-DD")
+          slug
+          tags {
             slug
+            name
+          }
+          title
+          custom_excerpt
+          meta_description
+          feature_image_local {
+            childImageSharp {
+              gatsbyImageData(
+                width: 320
+                height: 170
+                placeholder: BLURRED
+                formats: [AUTO, AVIF, WEBP]
+                transformOptions: { fit: COVER, cropFocus: CENTER }
+              )
+            }
           }
         }
       }

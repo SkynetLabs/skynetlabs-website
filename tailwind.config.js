@@ -47,6 +47,7 @@ module.exports = {
         desktop: "1024px",
         content: "992px",
         layout: "1408px",
+        prose: "720px",
       },
       lineHeight: {
         16: "4rem",

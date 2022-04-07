@@ -1,24 +1,27 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+const BlogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+const PressReleaseTemplate = path.resolve(`./src/templates/press-release.js`);
+
+/* Tags and their names are defined in Ghost CMS */
+const isBlogPost = (node) => node.primary_tag?.name === "Blog";
+const isPressRelease = (node) => node.primary_tag?.name === "Press Release";
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
-
-  // Define a template for news post
-  const PostTemplate = path.resolve(`./src/templates/news-post.js`);
 
   // Get all markdown news posts sorted by date and all possible authors
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: ASC }
-          filter: { frontmatter: { external: { eq: null } } }
-        ) {
-          nodes {
-            id
-            fields {
+        allGhostPost(sort: { order: ASC, fields: published_at }) {
+          edges {
+            node {
               slug
+              primary_tag {
+                name
+              }
             }
           }
         }
@@ -31,28 +34,31 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const posts = result.data.allMarkdownRemark.nodes;
+  const posts = result.data.allGhostPost.edges;
 
-  // Create news posts pages
-  // But only if there's at least one markdown file found at "/data/news" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+  // Create post pages
+  posts.forEach(({ node }) => {
+    // This part here defines, that our posts will use
+    // a `/news/:slug/` permalink.
+    const url = `/news/${node.slug}/`;
+    const component = isBlogPost(node) ? BlogPostTemplate : isPressRelease(node) ? PressReleaseTemplate : null;
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id;
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id;
+    if (component === null) {
+      // NOTE: should we throw here?
+      reporter.error(`Don't know which template to use for "${node.slug}" - did you add a primary tag to the article?`);
+      return;
+    }
 
-      createPage({
-        path: post.fields.slug,
-        component: PostTemplate,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
-      });
+    createPage({
+      path: url,
+      component,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
     });
-  }
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
