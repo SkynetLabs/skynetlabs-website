@@ -8,9 +8,9 @@ import Link from "../components/Link";
 import { NewsSummary } from "../components/News";
 import { Section, SectionTitle, Label } from "../components/Layout";
 import { TwitterSmall, LinkedinSmall, FacebookSmall, ArrowUpCircle } from "../components/Icons";
-
-import "../styles/news-post.css";
 import ArticleMeta from "../components/ArticleMeta";
+
+import "../styles/article.css";
 
 const useResponsiveEmbeds = (ref) => {
   React.useLayoutEffect(() => {
@@ -91,7 +91,7 @@ const PressReleaseTemplate = ({ data, location }) => {
 
             <div className="col-span-2 space-y-12">
               {post.excerpt && <p className="excerpt">{post.excerpt}</p>}
-              <section ref={contentRef} className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+              <section ref={contentRef} className="article-body" dangerouslySetInnerHTML={{ __html: post.html }} />
             </div>
           </div>
         </article>

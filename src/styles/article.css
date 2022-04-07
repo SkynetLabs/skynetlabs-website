@@ -2,11 +2,7 @@
   @apply text-palette-300 my-4 text-lg font-light;
 }
 
-a {
-  @apply text-primary hover:text-primary-light transition-colors;
-}
-
-.content-body {
+.article-body {
   @apply font-content flex flex-col text-base leading-7 text-palette-400 font-light;
 
   > div {

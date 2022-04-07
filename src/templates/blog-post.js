@@ -7,9 +7,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Link from "../components/Link";
 import { Section, Label } from "../components/Layout";
 import { ArrowUpCircle } from "../components/Icons";
-
-import "../styles/news-post.css";
 import ArticleMeta from "../components/ArticleMeta";
+
+import "../styles/article.css";
 
 const useResponsiveEmbeds = (ref) => {
   React.useLayoutEffect(() => {
@@ -103,7 +103,7 @@ const PostTemplate = ({ data }) => {
             </div>
           )}
 
-          <section ref={contentRef} className="content-body" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <section ref={contentRef} className="article-body" dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
 
         <Link

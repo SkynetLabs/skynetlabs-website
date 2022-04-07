@@ -43,6 +43,10 @@
   h1 {
     @apply font-semibold text-3xl desktop:text-6xl desktop:leading-16;
   }
+
+  a {
+    @apply text-primary hover:text-primary-light transition-colors;
+  }
 }
 
 .circle {

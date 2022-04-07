@@ -16,7 +16,7 @@ export default function ArticleMeta({ post }) {
   const primaryAuthorUrl = `https://twitter.com/${primaryAuthor?.twitter || "SkynetLabs"}`;
 
   return (
-    <Helmet htmlAttributes={{ lang: "en" }}>
+    <Helmet htmlAttributes={{ lang: "en" }} defer={false}>
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
