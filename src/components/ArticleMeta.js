@@ -8,25 +8,25 @@ export default function ArticleMeta({ post }) {
   const ogUrl = `${siteUrl}/news/${post.slug}`;
   const canonicalUrl = post.canonical_url;
 
-  const title = `${post.og_title || post.meta_title || post.title} | Skynet Labs`;
-  const description = post.og_description || post.meta_description || post.custom_excerpt || post.excerpt;
+  const headline = post.meta_title || post.title;
+  const title = `${headline} | Skynet Labs`;
+  const description = post.meta_description || post.custom_excerpt || post.excerpt;
   const primaryAuthor = post.primary_author || post.authors[0];
   const primaryAuthorName = primaryAuthor?.name || "Skynet Labs";
   const primaryAuthorUrl = `https://twitter.com/${primaryAuthor?.twitter || "SkynetLabs"}`;
-  const publisherUrl = `https://twitter.com/SkynetLabs`;
 
   return (
     <Helmet htmlAttributes={{ lang: "en" }}>
       <title>{title}</title>
       <meta name="title" content={title} />
-      <meta name="article:headline" content={title} />
       <meta name="description" content={description} />
       <meta name="author" content={primaryAuthorName} />
+      <meta property="article:headline" content={headline} />
       <meta property="article:modified_time" content={post.updated_at} />
       <meta property="article:published_time" content={post.published_at} />
       <meta property="article:image" content={post.feature_image} />
       <meta property="article:author" content={primaryAuthorUrl} />
-      <meta property="article:publisher" content={publisherUrl} />
+      <meta property="article:publisher" content={siteUrl} />
 
       <meta property="og:url" content={ogUrl} />
       <meta property="og:type" content="article" />
