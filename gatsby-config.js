@@ -67,6 +67,7 @@ module.exports = {
         name: "feature_image_local",
       },
     },
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
