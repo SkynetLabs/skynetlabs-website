@@ -4190,7 +4190,7 @@ deep-is@^0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.4.tgz#a6f2dce612fadd2ef1f519b73551f17e85199831"
   integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
 
-deepmerge@^4.0, deepmerge@^4.0.0, deepmerge@^4.2.2:
+deepmerge@^4.0, deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
@@ -5634,7 +5634,7 @@ gatsby-core-utils@^2.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.11.0, gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.5.2, gatsby-core-utils@^3.7.0:
+gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.5.2, gatsby-core-utils@^3.7.0:
   version "3.11.1"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.11.1.tgz#ea87c1d3aa45c26c9ea32b8e8b029afe6a56f8c7"
   integrity sha512-Op9/uihtcsDLlZDfRsGJ1ya2mFx2YH9Zmx93bawElZ0YpIzKjCkNTp+I5i5UANxvs5I+Fljl0WHQRudMWg+fWA==
@@ -5803,10 +5803,10 @@ gatsby-plugin-robots-txt@1.7.0:
     "@babel/runtime" "^7.16.7"
     generate-robotstxt "^8.0.3"
 
-gatsby-plugin-sharp@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.7.0.tgz#3be0c1ab688a7c38ebbced0925911edf090f4d1d"
-  integrity sha512-l1C+TB2D04yZq7f35aj4irkkSsm4HIQEQVWAED2zkoL3RrUxQ2uRT4kakulv00SdGd5/i+7btc9xOPB25DGvgA==
+gatsby-plugin-sharp@4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.11.1.tgz#c6459f6636696919b4688b471fe4d4f1cf6f1f9a"
+  integrity sha512-wmbDnVl1386Mpm446tCavrI818HBpFOYk53cTerj5vaS+YmmuALwKSYVYOT2+LuVvZW0oaijuaDBeDnftq882g==
   dependencies:
     "@babel/runtime" "^7.15.4"
     async "^3.2.3"
@@ -5814,17 +5814,17 @@ gatsby-plugin-sharp@4.7.0:
     debug "^4.3.3"
     filenamify "^4.3.0"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^3.7.0"
-    gatsby-plugin-utils "^3.1.0"
-    gatsby-telemetry "^3.7.0"
+    gatsby-core-utils "^3.11.1"
+    gatsby-plugin-utils "^3.5.1"
+    gatsby-telemetry "^3.11.1"
     got "^11.8.3"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.3"
     potrace "^2.1.8"
-    probe-image-size "^6.0.0"
+    probe-image-size "^7.0.0"
     progress "^2.0.3"
     semver "^7.3.5"
-    sharp "^0.29.3"
+    sharp "^0.30.1"
     svgo "1.3.2"
     uuid "3.4.0"
 
@@ -5899,15 +5899,15 @@ gatsby-remark-copy-linked-files@5.11.0:
     probe-image-size "^7.0.0"
     unist-util-visit "^2.0.3"
 
-gatsby-remark-images@6.11.0:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.11.0.tgz#ea3c3f9619de67ad41bd400cd1802812b04c9d7e"
-  integrity sha512-xUBPGHEJILxbAh/pTNtkYCZ0kA1jyt3KyLrr8xwkGODJ/j2tDWVohnlzST3ps8Z0p1v3cKacWpnTsTaeUDmomg==
+gatsby-remark-images@6.11.1:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.11.1.tgz#c764d5e03cac554e6915586edf8b5b768d0acc44"
+  integrity sha512-fuTwXZeD3bDa7F+MdPn3osIsU6N4+oHMPfntlW/IWaeFilzz2qB51f4tT23BYo42LUiiCs+bCoQHiSs3ipvShg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     chalk "^4.1.2"
     cheerio "^1.0.0-rc.10"
-    gatsby-core-utils "^3.11.0"
+    gatsby-core-utils "^3.11.1"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     mdast-util-definitions "^4.0.0"
@@ -9938,15 +9938,6 @@ prismjs@^1.27.0, prismjs@~1.27.0:
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.27.0.tgz#bb6ee3138a0b438a3653dd4d6ce0cc6510a45057"
   integrity sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==
-
-probe-image-size@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-6.0.0.tgz#4a85b19d5af4e29a8de7d53a9aa036f6fd02f5f4"
-  integrity sha512-99PZ5+RU4gqiTfK5ZDMDkZtn6eL4WlKfFyVJV7lFQvH3iGmQ85DqMTOdxorERO26LHkevR2qsxnHp0x/2UDJPA==
-  dependencies:
-    deepmerge "^4.0.0"
-    needle "^2.5.2"
-    stream-parser "~0.3.1"
 
 probe-image-size@^7.0.0:
   version "7.2.3"
