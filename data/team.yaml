@@ -84,12 +84,6 @@
     linkedin: https://www.linkedin.com/in/dghelm/
     twitter: https://twitter.com/danielgileshelm
 
-- name: Marissa Hudson
-  position: Engineering Intern
-  image: ./team/marissa-hudson.jpeg
-  social:
-    github: https://github.com/fluffy9
-
 - name: Alice Hlidkova
   position: Executive Assistant
   image: ./team/alice-hlidkova.jpeg
