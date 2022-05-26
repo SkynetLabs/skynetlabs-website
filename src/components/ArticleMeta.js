@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import useSiteMetadata from "../services/useSiteMetadata";
+import { matomoTagManagerScript } from "./seo";
 
 export default function ArticleMeta({ post }) {
   const { siteUrl, image: orgImage } = useSiteMetadata();
@@ -74,6 +75,7 @@ export default function ArticleMeta({ post }) {
           }
         `}
       </script>
+      <script type="text/javascript">{matomoTagManagerScript}</script>
     </Helmet>
   );
 }

@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const matomoTagManagerScript = `
+export const matomoTagManagerScript = `
 var _mtm = window._mtm = window._mtm || [];
 _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
