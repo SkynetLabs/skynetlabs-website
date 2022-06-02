@@ -49,7 +49,7 @@ const resources = [
   {
     title: "Skynet SDK Docs",
     description: "SDKs in Javascript, Go, Python and more.",
-    href: "https://siasky.net/docs/",
+    href: "https://sdk.skynetlabs.com/",
   },
   {
     title: "Skynet AppStore",
@@ -75,7 +75,7 @@ const resources = [
 
 const docs = [
   { name: "Developer Guide", href: "https://docs.skynetlabs.com/" },
-  { name: "Skynet SDK Docs", href: "https://siasky.net/docs/" },
+  { name: "Skynet SDK Docs", href: "https://sdk.skynetlabs.com/" },
 ];
 
 const DevelopersPage = () => (
