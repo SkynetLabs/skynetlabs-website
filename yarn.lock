@@ -1090,10 +1090,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/sora@4.5.5":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.5.5.tgz#25e8e0a11d0a2a861ccce23a94383448c5beaa50"
-  integrity sha512-SeePOM5pvXaa2a1c9VuGPJGmHNcFSUBzVxfHMuQ/FrVeiXvF3XXyPbt68N6QmHK2rAH844BN1Y5zImxqa5ok6g==
+"@fontsource/sora@4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.5.8.tgz#6bf3889ff735fb7da969cee8b2720640f1bc398d"
+  integrity sha512-WUSB/Kk4EosszcnzsdMqK4wUMtb3uqKmIvVPilcCGQzPTSL/iZJahjZSOlPKamxnYd2NinnFboBVSmciTF0iWQ==
 
 "@fontsource/source-sans-pro@4.5.6":
   version "4.5.6"
@@ -4378,10 +4378,10 @@ cypress-file-upload@5.0.8:
   resolved "https://registry.yarnpkg.com/cypress-file-upload/-/cypress-file-upload-5.0.8.tgz#d8824cbeaab798e44be8009769f9a6c9daa1b4a1"
   integrity sha512-+8VzNabRk3zG6x8f8BWArF/xA/W0VK4IZNx3MV0jFWrJS/qKn8eHfa5nU73P9fOQAgwHFJx7zjg4lwOnljMO8g==
 
-cypress@9.4.1:
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-9.4.1.tgz#1a4ba706435829c24b7edf350c2b059e05da9084"
-  integrity sha512-+JgMG9uT+QFx97JU9kOHE3jO3+0UdkQ9H1oCBiC7A74qme7Jkdy2sYDBCPjjGczutnWnGUTMRlwiNMP/Uq6LrQ==
+cypress@10.3.0:
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-10.3.0.tgz#fae8d32f0822fcfb938e79c7c31ef344794336ae"
+  integrity sha512-txkQWKzvBVnWdCuKs5Xc08gjpO89W2Dom2wpZgT9zWZT5jXxqPIxqP/NC1YArtkpmp3fN5HW8aDjYBizHLUFvg==
   dependencies:
     "@cypress/request" "^2.88.10"
     "@cypress/xvfb" "^1.2.4"
@@ -4415,7 +4415,7 @@ cypress@9.4.1:
     listr2 "^3.8.3"
     lodash "^4.17.21"
     log-symbols "^4.0.0"
-    minimist "^1.2.5"
+    minimist "^1.2.6"
     ospath "^1.2.2"
     pretty-bytes "^5.6.0"
     proxy-from-env "1.0.0"
@@ -5846,16 +5846,7 @@ fs-exists-cached@1.0.0, fs-exists-cached@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-exists-cached/-/fs-exists-cached-1.0.0.tgz#cf25554ca050dc49ae6656b41de42258989dcbce"
   integrity sha1-zyVVTKBQ3EmuZla0HeQiWJidy84=
 
-fs-extra@^10.0.0:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.1.tgz#27de43b4320e833f6867cc044bfce29fdf0ef3b8"
-  integrity sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==
-  dependencies:
-    graceful-fs "^4.2.0"
-    jsonfile "^6.0.1"
-    universalify "^2.0.0"
-
-fs-extra@^10.1.0:
+fs-extra@^10.0.0, fs-extra@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
@@ -6231,18 +6222,18 @@ gatsby-remark-classes@1.0.2:
   dependencies:
     unist-util-select "^2.0.2"
 
-gatsby-remark-copy-linked-files@5.11.0:
-  version "5.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-5.11.0.tgz#11c7f6340aaf5103223ff048c8d0f9154dc713db"
-  integrity sha512-k64JUPf133iwCges5rLM0tGRRSOoDKOt5sHMuAKw/emscbn2DKbI1m76e9uQxI1xPP+LO7K21DysFou+wPQn/Q==
+gatsby-remark-copy-linked-files@5.17.0:
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-5.17.0.tgz#3bdfd20d97e8a57d06ebce944f6fda6a88838418"
+  integrity sha512-Q1T69Oi84UAa18//54vtMIMPRTkx+P7DQKoRMXi6r3muRAjfN/sT66ZxDdCayT5SoKYT8Opa5hGZo8N/lvtmQw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
-    fs-extra "^10.0.0"
+    fs-extra "^10.1.0"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     path-is-inside "^1.0.2"
-    probe-image-size "^7.0.0"
+    probe-image-size "^7.2.3"
     unist-util-visit "^2.0.3"
 
 gatsby-remark-images@6.11.1:
@@ -6262,10 +6253,10 @@ gatsby-remark-images@6.11.1:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-remark-prismjs@6.11.0:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-6.11.0.tgz#b58386e69c6cef6c13274067ee9ceb6a8a7469b0"
-  integrity sha512-iYUFDrHwyJQ4vahp8Cv6G31URBPrM9osNq038kPaCPwRl8max7/+hK3jrZMBihY7NppmVPEq/tvzGHbXyzlEwQ==
+gatsby-remark-prismjs@6.17.0:
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-6.17.0.tgz#b00109d4b90e9ccff5069b2d30e7ac0253882717"
+  integrity sha512-Q9VY2A644oVbsQpG0SaEJHTlHA0SlLaxC4h1dMHa1SjdLySjBNqqeUrXcmL8OceoOaP1z+QWvON++bdMILow5w==
   dependencies:
     "@babel/runtime" "^7.15.4"
     parse-numeric-range "^1.2.0"
@@ -8980,7 +8971,7 @@ minimist-options@4.1.0:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
-minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.5, minimist@^1.2.6:
+minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.3, minimist@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
@@ -10331,7 +10322,7 @@ prismjs@^1.27.0, prismjs@~1.27.0:
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.27.0.tgz#bb6ee3138a0b438a3653dd4d6ce0cc6510a45057"
   integrity sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==
 
-probe-image-size@^7.0.0:
+probe-image-size@^7.0.0, probe-image-size@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-7.2.3.tgz#d49c64be540ec8edea538f6f585f65a9b3ab4309"
   integrity sha512-HubhG4Rb2UH8YtV4ba0Vp5bQ7L78RTONYu/ujmCu5nBI8wGv24s4E9xSKBi0N1MowRpxk76pFCpJtW0KPzOK0w==
