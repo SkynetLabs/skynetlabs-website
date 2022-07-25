@@ -5968,28 +5968,7 @@ gatsby-core-utils@^2.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.18.1, gatsby-core-utils@^3.5.2, gatsby-core-utils@^3.7.0:
-  version "3.18.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.18.1.tgz#7a9451ad1802a6489d24d5b52176720345e1b967"
-  integrity sha512-sJTxRqizLxYy/tSFk0ydfqEZ3ek1So9HDVUa39F6Oi8XuPCBTFzaAooUvowKGneI5YUbdk5y4VO4ybwVUynntw==
-  dependencies:
-    "@babel/runtime" "^7.15.4"
-    ci-info "2.0.0"
-    configstore "^5.0.1"
-    fastq "^1.13.0"
-    file-type "^16.5.3"
-    fs-extra "^10.1.0"
-    got "^11.8.5"
-    import-from "^4.0.0"
-    lmdb "2.5.3"
-    lock "^1.1.0"
-    node-object-hash "^2.3.10"
-    proper-lockfile "^4.1.2"
-    resolve-from "^5.0.0"
-    tmp "^0.2.1"
-    xdg-basedir "^4.0.0"
-
-gatsby-core-utils@^3.19.0:
+gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.17.0, gatsby-core-utils@^3.18.1, gatsby-core-utils@^3.19.0, gatsby-core-utils@^3.5.2, gatsby-core-utils@^3.7.0:
   version "3.19.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.19.0.tgz#9de637574af1d1d283ffa9b38f058aa2dc6e3d12"
   integrity sha512-cjXs9DsXkPZt+UdiLHxtq+rGMGVrcnM0KwkawlruvPchI7lqGNv9CScqlvYPxx1dBhu3zSZS26EBALMlFhyOJA==
@@ -6088,16 +6067,16 @@ gatsby-plugin-manifest@4.17.0:
     semver "^7.3.7"
     sharp "^0.30.3"
 
-gatsby-plugin-netlify@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-4.2.0.tgz#73f77d94d4a2f958cde8d1e3c4103caeeb592de7"
-  integrity sha512-vIUM4UtRxLGvaUhgHWqZGC8iiUY8vGgBCDePSNBjYyjpH6QD+DtwTYrCB+kRQVm5h7xMlc6MFMOPzRHHDQA8pQ==
+gatsby-plugin-netlify@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.0.0.tgz#910deaec4b7337c6c6d5355811a6c89db0654902"
+  integrity sha512-UzP9aa0RzSkWPTESuxNTP3LbFtIEa4q/vfywwQQZrLGLX5dxGcBE5s+NSz3gtxDY1jYmtOW6BAzkOIevW4rItQ==
   dependencies:
     "@babel/runtime" "^7.16.7"
     fs-extra "^10.0.0"
     gatsby-core-utils "^3.5.2"
     kebab-hash "^0.1.2"
-    lodash "^4.17.21"
+    lodash.mergewith "^4.6.2"
     webpack-assets-manifest "^5.0.6"
 
 gatsby-plugin-page-creator@^4.7.0:
@@ -8406,6 +8385,11 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.mergewith@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
+  integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
 lodash.once@^4.1.1:
   version "4.1.1"
