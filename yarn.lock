@@ -6753,10 +6753,10 @@ gatsby@4.23.0:
   optionalDependencies:
     gatsby-sharp "^0.17.0"
 
-gbimage-bridge@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/gbimage-bridge/-/gbimage-bridge-0.2.1.tgz#3bb44a4eb06855f1a8c23db5396d710352acaf05"
-  integrity sha512-Wy7fiXyYewxzgs17Mx+msSbxSK8JGbkVDQmkuyXER6T3wfZHC04PLnzP1ZrFr7qpboOdIExUChp3TZtzRor4AA==
+gbimage-bridge@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/gbimage-bridge/-/gbimage-bridge-0.2.2.tgz#19d346b21051f35d093911477958656dea6bf518"
+  integrity sha512-ROieMnsqN9aHr55oUJd7crfJadZGjGcF59ooHmMbD4KYM/ut0AbafsnJvJaWt3nYAujG+dq/m1eEleRYnTjm4Q==
 
 generate-robotstxt@^8.0.3:
   version "8.0.3"
