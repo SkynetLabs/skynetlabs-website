@@ -69,7 +69,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "0.5.4",
-    "autoprefixer": "10.4.4",
+    "autoprefixer": "10.4.11",
     "cross-env": "7.0.3",
     "cypress": "10.3.0",
     "cypress-file-upload": "5.0.8",
