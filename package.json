@@ -36,7 +36,7 @@
     "gatsby-plugin-postcss": "5.20.0",
     "gatsby-plugin-purgecss": "6.1.2",
     "gatsby-plugin-react-helmet": "5.19.0",
-    "gatsby-plugin-remote-images": "^3.3.0",
+    "gatsby-plugin-remote-images": "^3.4.0",
     "gatsby-plugin-robots-txt": "1.7.0",
     "gatsby-plugin-sharp": "4.20.0",
     "gatsby-plugin-sitemap": "5.11.1",
