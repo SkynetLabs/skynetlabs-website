@@ -2342,14 +2342,15 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tailwindcss/typography@0.5.4":
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.4.tgz#ad8c9e6808bae297bb7826742e4789f2a9f09a48"
-  integrity sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==
+"@tailwindcss/typography@0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.5.7.tgz#e0b95bea787ee14c5a34a74fc824e6fe86ea8855"
+  integrity sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==
   dependencies:
     lodash.castarray "^4.4.0"
     lodash.isplainobject "^4.0.6"
     lodash.merge "^4.6.2"
+    postcss-selector-parser "6.0.10"
 
 "@tokenizer/token@^0.3.0":
   version "0.3.0"
@@ -6107,7 +6108,7 @@ gatsby-core-utils@^2.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.20.0, gatsby-core-utils@^3.22.0, gatsby-core-utils@^3.23.0, gatsby-core-utils@^3.5.2:
+gatsby-core-utils@^3.11.1, gatsby-core-utils@^3.20.0, gatsby-core-utils@^3.23.0, gatsby-core-utils@^3.5.2:
   version "3.23.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.23.0.tgz#0c8879ffb655f2d8cfe485f03beed7db6441dc69"
   integrity sha512-ABVTAkjZh+2H4u6GZ+r1uZrdcWuT5KG2nEpKmBWBp21GWEE+yvUqtGOocBgUeGac1A3ggvn02UzcE6BIEm9PYg==
@@ -6228,10 +6229,10 @@ gatsby-plugin-manifest@4.23.0:
     semver "^7.3.7"
     sharp "^0.30.7"
 
-gatsby-plugin-netlify@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.0.0.tgz#910deaec4b7337c6c6d5355811a6c89db0654902"
-  integrity sha512-UzP9aa0RzSkWPTESuxNTP3LbFtIEa4q/vfywwQQZrLGLX5dxGcBE5s+NSz3gtxDY1jYmtOW6BAzkOIevW4rItQ==
+gatsby-plugin-netlify@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.0.1.tgz#3e7de3fcaf712e05e8de8b8de4753e1c79e538ff"
+  integrity sha512-siy/zX45fIEtfCApH3QkXG0u3mS0y/bf/J2mDMFOrfvhiyB35YDJfaWoRvon+UwJM4dYcMJY17sAnBaBfOQ9GA==
   dependencies:
     "@babel/runtime" "^7.16.7"
     fs-extra "^10.0.0"
@@ -6398,16 +6399,16 @@ gatsby-remark-copy-linked-files@5.19.0:
     probe-image-size "^7.2.3"
     unist-util-visit "^2.0.3"
 
-gatsby-remark-images@6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.22.0.tgz#533d03b76e6a2a2decf57b9125be2af83637c5fd"
-  integrity sha512-4H/NTHaeika9ftDSQjEWvrlRhTSgHHVK07blqqQM1wsvknjphtjB5S4i6SuByYD8U+j8Lment5BEP9HJVNx+LA==
+gatsby-remark-images@6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-6.23.0.tgz#fcf1cb8042c88355581dec0a386bfb5d97def1cf"
+  integrity sha512-0+t7TBLjKOFgj1MKYiYTX85KD9EqZ4nv2xbFDrpHDtT+p1VaJB6tPtlzsa7S69nZs3HMZkLqRIIQdClnN9DaEg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.3.0"
     chalk "^4.1.2"
     cheerio "^1.0.0-rc.10"
-    gatsby-core-utils "^3.22.0"
+    gatsby-core-utils "^3.23.0"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     mdast-util-definitions "^4.0.0"
@@ -6415,10 +6416,10 @@ gatsby-remark-images@6.22.0:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-remark-prismjs@6.17.0:
-  version "6.17.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-6.17.0.tgz#b00109d4b90e9ccff5069b2d30e7ac0253882717"
-  integrity sha512-Q9VY2A644oVbsQpG0SaEJHTlHA0SlLaxC4h1dMHa1SjdLySjBNqqeUrXcmL8OceoOaP1z+QWvON++bdMILow5w==
+gatsby-remark-prismjs@6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-6.23.0.tgz#8ef20b4e169bfd479bcddf8c97fecb89a805643f"
+  integrity sha512-iyqMy0bWUSelpXnoXCCXg64NzoRoviNPgSiZe5jFZZK81T7hAj38aHRzlMz5xdxrwC5oVCjoxvQxsqnOANz84w==
   dependencies:
     "@babel/runtime" "^7.15.4"
     parse-numeric-range "^1.2.0"
@@ -10056,7 +10057,7 @@ postcss-reduce-transforms@^5.1.0:
   dependencies:
     postcss-value-parser "^4.2.0"
 
-postcss-selector-parser@^6.0.10, postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector-parser@^6.0.5, postcss-selector-parser@^6.0.6, postcss-selector-parser@^6.0.9:
+postcss-selector-parser@6.0.10, postcss-selector-parser@^6.0.10, postcss-selector-parser@^6.0.2, postcss-selector-parser@^6.0.4, postcss-selector-parser@^6.0.5, postcss-selector-parser@^6.0.6, postcss-selector-parser@^6.0.9:
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.0.10.tgz#79b61e2c0d1bfc2602d549e11d0876256f8df88d"
   integrity sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==
