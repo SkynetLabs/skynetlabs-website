@@ -6437,10 +6437,10 @@ gatsby-remark-classes@1.0.2:
   dependencies:
     unist-util-select "^2.0.2"
 
-gatsby-remark-copy-linked-files@5.19.0:
-  version "5.19.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-5.19.0.tgz#50a2899e35e19db3dd783ad405162e684bfbfc61"
-  integrity sha512-MB3MgqUy4+z0dTOHOwuUQPkCC9di9jS6tM/KBmZ29fxK7OZzzvTOFNOEKCWiO0/ioj+6fIbjkI5xMUJ5eKJ5VA==
+gatsby-remark-copy-linked-files@5.23.0:
+  version "5.23.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-5.23.0.tgz#312dd60c47007ebb0f9284fd54586e6eb34172ad"
+  integrity sha512-C34x6RXovlRJbGHu21U/GkKSibBeyDMDgVg1SBdrKKwqmzHfHhdpCHQLqbyMOvUC2CUDE/ePGWHskom1vg/OXQ==
   dependencies:
     "@babel/runtime" "^7.15.4"
     cheerio "^1.0.0-rc.10"
@@ -10185,10 +10185,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.1.tgz#d472797e0d7461605c1609808e27b80c0f9cfe17"
-  integrity sha512-8UVbTBYGwN37Bs9LERmxCPjdvPxlEowx2urIL6urHzdb3SDq4B/Z6xLFCblrSnE4iKWcS6ziJ3aOYrc1kz/E2A==
+prettier@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-bytes@^5.4.1, pretty-bytes@^5.6.0:
   version "5.6.0"
