@@ -27,7 +27,7 @@
     "@fontsource/source-sans-pro": "4.5.11",
     "@svgr/webpack": "6.2.1",
     "classnames": "2.3.2",
-    "framer-motion": "6.3.16",
+    "framer-motion": "6.5.1",
     "gatsby": "4.23.0",
     "gatsby-background-image": "1.6.0",
     "gatsby-plugin-image": "2.23.0",
