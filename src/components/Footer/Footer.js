@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex items-center">
             <LogoWhiteText />
             <span className="ml-8 text-palette-300 text-sm font-content hidden desktop:inline">
-              {new Date().getFullYear()} Skynet Labs | All rights reserved
+              2022 Skynet Labs | All rights reserved
             </span>
           </div>
 

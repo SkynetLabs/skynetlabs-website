@@ -71,12 +71,6 @@ const IndexPage = ({ data }) => {
             our decentralized internet ecosystem and revolution.
           </p>
 
-          <Link
-            href="https://skapp.hns.siasky.net/"
-            className="mt-6 uppercase flex items-center text-xs text-palette-600 hover:text-primary transition-colors duration-200"
-          >
-            Try Skynet Apps <ArrowRight className="fill-current" />
-          </Link>
         </div>
       </Section>
 
@@ -108,9 +102,6 @@ const IndexPage = ({ data }) => {
         </div>
       </Section>
 
-      <Section className="bg-primary">
-        <CommunitySection />
-      </Section>
     </>
   );
 };
