@@ -1,11 +1,9 @@
-- header: Skynet Labs
+- header: Skynet
   links:
-    - title: About us
+    - title: About
       to: /about
     - title: Brand Guidelines
       href: https://support.skynetlabs.com/key-concepts/skynet-brand-guidelines
-    - title: Careers
-      href: https://jobs.lever.co/SkynetLabs
     - title: Terms of Use
       href: /terms.pdf
     - title: Privacy Policy
@@ -17,7 +15,7 @@
     - title: API & SDK Documentation
       href: https://sdk.skynetlabs.com/
     - title: Portal Setup
-      href: https://support.skynetlabs.com/the-technology/running-a-web-portal
+      href: https://portal-docs.skynetlabs.com/
     - title: Github
       href: https://github.com/SkynetLabs
     - title: Gitlab
@@ -40,15 +38,11 @@
       href: https://forum.sia.tech
     - title: SiaStats
       href: https://siastats.info
-    - title: Skynet AppStore
-      href: https://skapp.hns.siasky.net/
 - header: Skynet Webportals
   links:
     - title: Skynetfree.net
       href: https://skynetfree.net
     - title: Skynetpro.net
       href: https://skynetpro.net
-    - title: Siasky.net
-      href: https://siasky.net
     - title: Web3portal.com
       href: https://web3portal.com/

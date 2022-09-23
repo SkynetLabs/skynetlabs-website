@@ -21,10 +21,6 @@
       src: ./assets/skynet-storage-free-use.svg
       alt: Image of a server database and a shield
       text: Focus on building, not overhead server costs. When users own their data, developers aren't asked to pay for it.
-    - title: Monetization
-      src: ./assets/monetization-skynet.svg
-      alt: Image of a coin symbol
-      text: Profit directly from the success of your skapp. Now you can truly prioritize your users, instead of advertisers.
     - title: Persistence
       src: ./assets/decentralized-storage-benefits.svg
       alt: Abstract image of a shield and a graph line

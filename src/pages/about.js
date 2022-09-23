@@ -41,18 +41,18 @@ const aboutCards = [
     title: "Innovation built for users",
     text: "All Skynet apps are open-source. If you dislike an app’s feature or want to make your own improvements, you’re welcome to do so. (We of course encourage collaboration and hope you chat with the developer first!) Existing users can then consent to the migration of all their account data to the latest version. ",
   },
-  {
-    Icon: ComputerScreen,
-    label: "Coming soon",
-    title: "Control your content feed",
-    text: "We believe that users, not tech platforms should fully control how content is moderated. A decentralized internet is not an information free-for-all. It means that the individual holds the power to personalize their online experiences. For example, users will decide what content appears in their social media feeds, not a corporate algorithm.",
-  },
-  {
-    Icon: Cogs,
-    label: "Coming soon",
-    title: "Developer and Creator-centric monetization",
-    text: "As a content creator, set your own terms and price for your art. You and your collaborators can get paid directly, fairly, and automatically in crypto without relying on advertising as a sole source of income.",
-  },
+  // {
+  //   Icon: ComputerScreen,
+  //   label: "Coming soon",
+  //   title: "Control your content feed",
+  //   text: "We believe that users, not tech platforms should fully control how content is moderated. A decentralized internet is not an information free-for-all. It means that the individual holds the power to personalize their online experiences. For example, users will decide what content appears in their social media feeds, not a corporate algorithm.",
+  // },
+  // {
+  //   Icon: Cogs,
+  //   label: "Coming soon",
+  //   title: "Developer and Creator-centric monetization",
+  //   text: "As a content creator, set your own terms and price for your art. You and your collaborators can get paid directly, fairly, and automatically in crypto without relying on advertising as a sole source of income.",
+  // },
 ];
 
 const showCareersCTA = true; // switch to hide or display the careers CTA section
