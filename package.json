@@ -39,7 +39,7 @@
     "gatsby-plugin-remote-images": "^3.5.0",
     "gatsby-plugin-robots-txt": "1.7.1",
     "gatsby-plugin-sharp": "4.23.0",
-    "gatsby-plugin-sitemap": "5.23.0",
+    "gatsby-plugin-sitemap": "5.24.0",
     "gatsby-plugin-svgr": "3.0.0-beta.0",
     "gatsby-remark-classes": "1.0.2",
     "gatsby-remark-copy-linked-files": "5.23.0",
